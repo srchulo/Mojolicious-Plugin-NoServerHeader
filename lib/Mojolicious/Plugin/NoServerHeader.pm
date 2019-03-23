@@ -1,8 +1,13 @@
 package Mojolicious::Plugin::NoServerHeader;
+use Mojo::Base 'Mojolicious::Plugin';
 
-use strict;
-use 5.008_005;
 our $VERSION = '0.01';
+
+sub register {
+    $_[1]->hook(after_dispatch => sub {
+        $_[0]->res->headers->remove('Server');
+    });
+}
 
 1;
 __END__
@@ -11,15 +16,23 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Plugin::NoServerHeader - Blah blah blah
+Mojolicious::Plugin::NoServerHeader - Removes the Server header from every Mojolicious response
 
 =head1 SYNOPSIS
 
-  use Mojolicious::Plugin::NoServerHeader;
+  # Mojolicious::Lite
+  plugin 'NoServerHeader';
+
+  # Mojolicious
+  $app->plugin('NoServerHeader');
+
 
 =head1 DESCRIPTION
 
-Mojolicious::Plugin::NoServerHeader is
+L<Mojolicious::Plugin::NoServerHeader> removes the default Server header, "Mojolicious (Perl)", from every response.
+This can be useful for security reasons if there was ever a known exploit for L<Mojolicious>. If you are really concerned about
+this, you should also change the default error pages like the L<failraptor|https://mojolicious.org/mojo/failraptor.png>, although
+those are probably less obvious than a Server header in every response.
 
 =head1 AUTHOR
 
@@ -32,7 +45,7 @@ Copyright 2019- Adam Hopkins
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+it under the same terms as Perl it.
 
 =head1 SEE ALSO
 
