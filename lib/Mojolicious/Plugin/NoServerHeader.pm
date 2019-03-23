@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::NoServerHeader;
 use Mojo::Base 'Mojolicious::Plugin';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub register {
     $_[1]->hook(after_dispatch => sub {
