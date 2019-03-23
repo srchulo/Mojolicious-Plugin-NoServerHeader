@@ -2,6 +2,12 @@
 
 Mojolicious::Plugin::NoServerHeader - Removes the Server header from every Mojolicious response
 
+# STATUS
+
+<div>
+    <a href="https://travis-ci.org/srchulo/Mojolicious-Plugin-NoServerHeader"><img src="https://travis-ci.org/srchulo/Mojolicious-Plugin-NoServerHeader.svg?branch=master"></a>
+</div>
+
 # SYNOPSIS
 
     # Mojolicious::Lite
