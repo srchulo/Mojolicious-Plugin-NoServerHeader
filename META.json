@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Removes the Server header from every Mojolicious response",
    "author" : [
       "Adam Hopkins <srchulo@cpan.org>"
    ],
@@ -47,7 +47,21 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/srchulo/Mojolicious-Plugin-NoServerHeader/issues"
+      },
+      "homepage" : "https://github.com/srchulo/Mojolicious-Plugin-NoServerHeader",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/srchulo/Mojolicious-Plugin-NoServerHeader.git",
+         "web" : "https://github.com/srchulo/Mojolicious-Plugin-NoServerHeader"
+      }
+   },
    "version" : "0.01",
+   "x_contributors" : [
+      "Adam Hopkins <violapiratejunky@gmail.com>"
+   ],
    "x_generated_by_perl" : "v5.28.0",
    "x_serialization_backend" : "Cpanel::JSON::XS version 4.08",
    "x_static_install" : 1
